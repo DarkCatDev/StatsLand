@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+  --gradiant: linear-gradient(90.01deg, #9592DF 0.01%, rgba(208, 33, 138) 250.41%);
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  background-color: #fff;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 35px;
+  height: 3.7px;
+  background-color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--collapse .hamburger-inner::after {
+  top: -20px;
+  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    opacity 0.1s linear;
+}
+.hamburger--collapse .hamburger-inner::before {
+  transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
+    transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--collapse.is-active .hamburger-inner::after {
+  top: 0;
+  opacity: 0;
+  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    opacity 0.1s 0.22s linear;
+}
+.hamburger--collapse.is-active .hamburger-inner::before {
+  top: 0;
+  transform: rotate(-90deg);
+  transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
+    transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}
+nav ul {
+  list-style: none;
+}   
+nav ul li{
+  display: inline-block;
+  padding: 1vw;
+  order: 3;
+}
+nav ul li a {
+  position: relative;
+  color: white;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  text-decoration: none;
+}
+
+nav ul li a:hover{
+  background: var(--gradiant);    
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+nav button{
+  width: 110px;
+  height: 43px;
+  cursor: pointer;  
+}
+nav button a{
+  text-decoration: none;
+  font-size: 16px;
+}
+.logo {
+	width: min(20vw, 200px);
+  min-width: 150px;
+}
+.links{
+  order: 2;
+}
+.buttons{
+  order: 3;
+}
+
+.btn_1{
+  background: var(--gradiant);
+  border: none;
+  margin-right: 2vw;
+}
+.btn-1{
+  color: white;
+}
+.btn_2{
+  border-image: var(--gradiant);
+  border-image-slice: 1;
+  background: transparent;
+}
+.btn-2{
+  background: var(--gradiant);    
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.main_titles{
+  font-weight: 600;
+  margin-top: 7vh;
+}
+.titles{
+  font-size: clamp(3.5rem, 4vw, 6rem);
+  position: relative;
+  padding: 0 1em 0 1em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.title1{
+  background: white;
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;  
+  position: relative;
+  z-index: 1;
+  }
+.title2{
+  position: absolute;
+  top: 10px;
+  padding-left: 15px;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #7B7B7B;
+  opacity: 0.4;
+  color: transparent;
+}
+.subtitles{
+  display: flex;
+  justify-content: center;
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  position: relative;
+}
+.subtitle1{
+  position: relative;
+  background: var(--gradiant);    
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;  
+}
+.subtitle2{
+  position: absolute;
+  padding-left: 15px;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #7B7B7B;
+  opacity: 0.4;
+  color: transparent;
+  top: 10px;
+}
+.text{
+  text-align: center;
+  width: 400px;
+  color: #7B7B7B;
+  font-weight: 400;
+}
+.textarea{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.enteremail{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  position: relative;
+}
+::placeholder{
+color: white;
+font-size: 16px;
+display: flex;
+}
+.placeholder{
+  position: relative;
+  background-color: #7B7B7B;
+  opacity: 0.2;
+  width: 400px;
+  height: 60px;
+  border-radius: 10px;
+}
+.btn-signup{
+  position: absolute;
+  width: 120px;
+  height: 57px;
+  top: 3px;
+  margin-left: 290px;
+  cursor: pointer;  
+  border: none;
+  border-radius: 10px;
+  background: var(--gradiant);
+}
+.btn-text{
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+@media screen and (min-width: 1025px){
+.hamburger{
+  display: none;
+}
+}
+@media screen and (max-width: 1025px){
+  .links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap: 5rem;
+    top: 15%;
+    width: 100%;
+    left: -100%;
+    background: transparent;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    position: fixed;
+    top: 75%;
+    width: 100%;
+    left: -100%;
+    background: transparent;
+    text-align: center;
+    transition: all 0.5s;
+  }
+
+  .buttons.active, .links.active {
+    position: fixed;
+    left: 0;
+  }
+  .buttons.active {
+    position: fixed;
+    left: 0;
+  }
+  .main.active {
+    display: none;
+  }
+  .enteremail.active {
+    display: none;
+  }
+  html.active {
+    overflow-y: hidden;
+  }
+  .logo{
+    margin-left: 20px;
+  }
+  .hamburger{
+    margin-right: 20px;
+  }
+  nav{
+    justify-content: space-between;
+  }
+}
+@media screen and (min-height: 800px) {
+  .textarea{
+    margin-top: 50px;
+  }
+  .enteremail{ 
+    margin-top: 100px;
+  }
+  .main_titles{
+    margin-top: 14vh;
+  }
+}
+@media screen and (max-height: 800px) {
+  .links.active{
+    display: flex;
+    gap: 2.7rem;
+  }
+  
+}
+@media screen and (max-width: 772px) {
+  .title2{
+    width: 500px;
+  }
+}
+@media screen and (max-width: 492px) {
+  .title2{
+    width: 200px;
+  }
+}
